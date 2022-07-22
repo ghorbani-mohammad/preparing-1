@@ -22,7 +22,10 @@ services:
   crawler_beat:
     container_name: crawler_beat
     build: .
-    command: ['celery', '-A', '/app/crawler/crawler', 'beat', '-l', 'info']
+    command: ['sh', '-c', 'cd /app/crawler && celery -A crawler beat -l info']
+    volumes:
+      - .:/app
+    
 
 volumes:
   crawler_db:
