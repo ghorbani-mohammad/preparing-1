@@ -1,0 +1,11 @@
+services:
+  crawler_db:
+    container_name: crawler_db
+    image: postgres:14.4-alpine
+    volumes:
+      - crawler_db:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  crawler_db:
