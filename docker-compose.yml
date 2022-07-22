@@ -6,6 +6,23 @@ services:
       - crawler_db:/var/lib/postgresql/data
     env_file:
       - .env
+  
+  crawler_django:
+    container_name: crawler_django
+    build: .
+    command: ['python', '/app/crawler/manage.py', 'runserver', '0:80']
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
+  crawler_redis:
+    container_name: crawler_redis
+    image: redis:7.0.4-alpine
+  
+  crawler_beat:
+    container_name: crawler_beat
+    build: .
+    command: ['celery', '-A', '/app/crawler/crawler', 'beat', '-l', 'info']
 
 volumes:
   crawler_db:
