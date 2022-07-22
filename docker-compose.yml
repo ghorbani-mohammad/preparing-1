@@ -24,7 +24,4 @@ services:
     command: ['sh', '-c', 'cd /app/crawler && celery -A crawler worker -l info']
     volumes:
       - .:/app
-    
-
-volumes:
-  crawler_db:
+  
