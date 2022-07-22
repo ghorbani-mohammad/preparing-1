@@ -14,14 +14,14 @@ services:
   crawler_beat:
     container_name: crawler_beat
     build: .
-    command: ['sh', '-c', 'cd /app/crawler && celery -A crawler beat -l info']
+    command: ['sh', '-c', 'cd /app/crawler && celery -A crawler beat -l error']
     volumes:
       - .:/app
   
   crawler_worker:
     container_name: crawler_worker
     build: .
-    command: ['sh', '-c', 'cd /app/crawler && celery -A crawler worker -l info']
+    command: ['sh', '-c', 'cd /app/crawler && celery -A crawler worker -l error']
     volumes:
       - .:/app
   
