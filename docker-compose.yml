@@ -25,6 +25,13 @@ services:
     command: ['sh', '-c', 'cd /app/crawler && celery -A crawler beat -l info']
     volumes:
       - .:/app
+  
+  crawler_worker:
+    container_name: crawler_worker
+    build: .
+    command: ['sh', '-c', 'cd /app/crawler && celery -A crawler worker -l info']
+    volumes:
+      - .:/app
     
 
 volumes:
