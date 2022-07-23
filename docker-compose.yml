@@ -22,7 +22,6 @@ services:
     env_file:
       - .env
 
-  
   crawler_worker:
     container_name: crawler_worker
     build: .
@@ -32,4 +31,9 @@ services:
     env_file:
       - .env
 
+  crawler_firefox:
+    container_name: crawler_firefox
+    image: selenium/standalone-firefox
+    ports:
+      - 7900:7900
   
