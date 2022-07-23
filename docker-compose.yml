@@ -6,6 +6,8 @@ services:
     volumes:
       - .:/app
     restart: unless-stopped
+    env_file:
+      - .env
 
   crawler_redis:
     container_name: crawler_redis
@@ -17,6 +19,9 @@ services:
     command: ['sh', '-c', 'cd /app/crawler && celery -A crawler beat -l error']
     volumes:
       - .:/app
+    env_file:
+      - .env
+
   
   crawler_worker:
     container_name: crawler_worker
@@ -24,4 +29,7 @@ services:
     command: ['sh', '-c', 'cd /app/crawler && celery -A crawler worker -l error']
     volumes:
       - .:/app
+    env_file:
+      - .env
+
   

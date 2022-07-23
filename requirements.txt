@@ -1,3 +1,6 @@
-django
 celery
+django
+django-environ
 redis
+requests
+selenium
