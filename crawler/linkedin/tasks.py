@@ -50,6 +50,15 @@ def get_linkedin_feed():
     WebDriverWait(driver, 30).until(
         EC.presence_of_element_located((By.ID, "global-nav-search"))
     )
+    sort = driver.find_element("xpath", "//button[@class='display-flex full-width artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view']")
+    print(sort.text)
+    if "recent" not in sort.text:
+        print('sort on recent')
+        sort.click()
+        time.sleep(5)
+        sort_by_recent = driver.find_element("xpath", "//div[@class='artdeco-dropdown__content artdeco-dropdown--is-dropdown-element artdeco-dropdown__content--justification-right artdeco-dropdown__content--placement-bottom ember-view']")
+        sort_by_recent.click()
+    time.sleep(5)
     scroll(driver, 5)
     time.sleep(20)
     articles = driver.find_elements(
