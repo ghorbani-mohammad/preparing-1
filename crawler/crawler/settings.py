@@ -18,9 +18,6 @@ env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(#8+#8$_*w&9*dtk!k)s+8+b(0ttxx903b9i!47=rul)9pw)$3'
 
