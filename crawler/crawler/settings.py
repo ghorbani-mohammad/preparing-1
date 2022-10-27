@@ -2,13 +2,11 @@ import environ
 from pathlib import Path
 env = environ.Env()
 
+DEBUG = True
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(#8+#8$_*w&9*dtk!k)s+8+b(0ttxx903b9i!47=rul)9pw)$3'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
