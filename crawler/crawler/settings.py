@@ -3,9 +3,6 @@ from pathlib import Path
 env = environ.Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(#8+#8$_*w&9*dtk!k)s+8+b(0ttxx903b9i!47=rul)9pw)$3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
