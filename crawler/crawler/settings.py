@@ -8,9 +8,6 @@ SECRET_KEY = 'django-insecure-(#8+#8$_*w&9*dtk!k)s+8+b(0ttxx903b9i!47=rul)9pw)$3
 ALLOWED_HOSTS = []
 
 
-
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
